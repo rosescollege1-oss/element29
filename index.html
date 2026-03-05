@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element 29 | Mobile Bartending</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Rye&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav style="background: var(--espresso); padding: 20px; text-align: center; border-bottom: 2px solid var(--copper);">
+        <a href="index.html" class="western-text" style="color: var(--gold); text-decoration: none; margin: 0 20px;">Home</a>
+        <a href="cocktails.html" class="western-text" style="color: var(--cream); text-decoration: none; margin: 0 20px;">Drink Menu</a>
+        <a href="faq.html" class="western-text" style="color: var(--cream); text-decoration: none; margin: 0 20px;">FAQs</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="brand-title western-text">Element 29</h1>
+            <h2 class="headline">Your event. Our bar. <br>Crafted cocktails.</h2>
+            <p class="subhead">Premium mobile bartending with a touch of Western Chic.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('packages')">Explore Packages</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="packages" id="packages">
+        <h2 class="section-title western-text">Pour Packages</h2>
+        <p class="section-desc">Select a package below to start your custom estimate. <br>
+            <strong>Mocktails are always included at no extra charge.</strong><br>
+            <small><i>Note: Mocktails must be specifically requested to ensure preparation.</i></small>
+        </p>
+        
+        <div class="package-cards">
+            <div class="card" onclick="selectPackage('Sunset Starter', 3)">
+                <h3 class="western-text">Sunset Starter</h3>
+                <p class="hours">3 Hours</p>
+                <p class="pkg-detail">Perfect for cocktail hours, showers, or shorter private soirées where the vibe is light and the drinks are flowing.</p>
+                <button class="btn-select">Select Package</button>
+            </div>
+            <div class="card" onclick="selectPackage('Golden Hour', 4)">
+                <h3 class="western-text">Golden Hour</h3>
+                <p class="hours">4 Hours</p>
+                <p class="pkg-detail">Our signature wedding package. Designed to cover your reception from the first toast to the last dance.</p>
+                <button class="btn-select">Select Package</button>
+            </div>
+            <div class="card" onclick="selectPackage('Prime Pour', 5)">
+                <h3 class="western-text">Prime Pour</h3>
+                <p class="hours">5 Hours</p>
+                <p class="pkg-detail">For the hosts who want the party to linger. Ideal for larger celebrations and milestone birthdays.</p>
+                <button class="btn-select">Select Package</button>
+            </div>
+            <div class="card" onclick="selectPackage('Evening Encore', 6)">
+                <h3 class="western-text">Evening Encore</h3>
+                <p class="hours">6 Hours</p>
+                <p class="pkg-detail">The ultimate experience. We stay until the stars are high, ensuring premium service for the entire night.</p>
+                <button class="btn-select">Select Package</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="customizer" class="customizer hidden" style="background-image: url('images/calc-bg.jpg');">
+        <div class="calc-container">
+            <h3 id="selected-pkg-name" class="western-text">Customize Your Pour</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label>Guest Count</label>
+                    <input type="number" id="calc-guests" value="50" oninput="updateEstimate()">
+                </div>
+                <div class="input-group">
+                    <label>Miles from Malvern</label>
+                    <input type="number" id="calc-miles" value="0" oninput="updateEstimate()">
+                </div>
+                <div class="input-group">
+                    <label>Extra Hours</label>
+                    <input type="number" id="calc-extra-hours" value="0" min="0" oninput="updateEstimate()">
+                </div>
+                <div class="checkbox-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="calc-menu" onchange="updateEstimate()">
+                        <label>Custom Menu/Signage Upgrade (+$150)</label>
+                    </div>
+                    <p class="upgrade-desc">Includes printed signature cocktail menus and personalized bar signage.</p>
+                </div>
+            </div>
+            <div id="estimate-total">$0.00</div>
+            <button class="btn btn-primary" onclick="scrollToSection('booking')">Request Availability</button>
+        </div>
+    </section>
+
+    <section class="lifestyle-break">
+        <div class="break-img" style="background-image: url('images/lifestyle1.jpg');">
+            <div class="break-overlay">
+                <h2 class="western-text">Vintage Aesthetic. Modern Service.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="logistics-section" style="background-image: url('images/logistics-bg.jpg');">
+        <div class="logistics-overlay">
+            <h2 class="section-title white western-text">Staffing & Logistics</h2>
+            <div class="logistics-grid">
+                <div class="log-card">
+                    <h4>Expert Staffing</h4>
+                    <p>We make sure your bar is thoughtfully staffed so every guest is taken care of quickly and enjoys a smooth, elevated experience from the first sip to the last.</p>
+                </div>
+                <div class="log-card">
+                    <h4>The Setup</h4>
+                    <p>We arrive 60-90 minutes early for staging. From the string lights to the copper tools, every detail is handled before your first guest arrives.</p>
+                </div>
+                <div class="log-card">
+                    <h4>What's Included</h4>
+                    <p>Ice, mixers, premium garnishes, high-end disposables, and all bar tools come standard. We bring the bar; you bring the spirit(s).</p>
+                </div>
+                <div class="log-card">
+                    <h4>Dry Hire Bar</h4>
+                    <p>Per AR law, you provide the alcohol. We provide a detailed shopping list based on your guest count to make the process effortless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gallery-section">
+        <h2 class="section-title western-text">The Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/gal1.jpg" class="gallery-item" alt="Bar Setup">
+            <img src="images/gal2.jpg" class="gallery-item" alt="Cocktail Detail">
+            <img src="images/gal3.jpg" class="gallery-item" alt="Event Service">
+            <img src="images/gal4.jpg" class="gallery-item" alt="Signature Drink">
+            <img src="images/gal5.jpg" class="gallery-item" alt="The Trailer">
+            <img src="images/gal6.jpg" class="gallery-item" alt="Sunset Pour">
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="form-container">
+            <h2 class="section-title white western-text">Request Availability</h2>
+            <form class="western-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Tell us about your event..." required></textarea>
+                <button type="submit" class="btn btn-primary full-width">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <h2 class="footer-brand western-text">Element 29</h2>
+        <p>Premium Mobile Bartending | Malvern, AR</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
